@@ -1,17 +1,17 @@
-/* Global Reset */
+/* GLOBAL RESET / BASE STYLES */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif; /* Replace with your brand font if needed */
+  font-family: sans-serif;
 }
 
-/* Sticky Header */
+/* HEADER & NAV (Sticky, dark background) */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 999;
-  background-color: #0F2C3F; /* Dark navy or your chosen brand color */
+  background-color: #0F2C3F; /* Dark navy (or your brand color) */
   padding: 0.5rem 1rem;
 }
 
@@ -43,34 +43,37 @@
 }
 
 .main-nav ul li a:hover {
-  color: #FAD6A5; /* Example hover color to match your brand’s gold/copper tones */
+  color: #FAD6A5; /* Example brand accent */
 }
 
-/* Hero Section */
+/* HERO / LANDING SECTION */
 .hero-section {
-  position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height */
-  /* Replace with your desired background image (e.g., Matterhorn) */
-  background: url("images/matterhorn.jpg") no-repeat center center/cover;
-}
+  min-height: 100vh;  /* Full viewport height */
+  /* Put your mountain image (also in same folder) here:
+     e.g. rename "matterhorn.jpg" to something else if needed. */
+  background: url("matterhorn.png") no-repeat center center/cover;
+  position: relative;
 
-.hero-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* Because nav is sticky, add top padding to ensure text isn't hidden. */
+  padding-top: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: #fff;
-  max-width: 800px;
-  width: 90%;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.4); /* Semi‐transparent overlay for readability */
-  border-radius: 8px;
 }
 
-/* Hero Text */
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  /* If text is hard to read, add:
+     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  */
+}
+
+/* Headings and text in the hero */
 .hero-title {
   font-size: 3rem;
   margin-bottom: 0.5rem;
@@ -91,24 +94,20 @@
 .hero-date {
   font-size: 1.1rem;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Lower Banner / Tagline */
-.lower-banner {
-  background-color: #122C3F; 
-  padding: 1rem;
-  border-radius: 4px;
-}
-
-.tagline {
+/* Tagline with optional see-through box behind text */
+.hero-partner {
   font-size: 1.2rem;
-  font-weight: 400;
-  color: #FAD6A5;
-  margin: 0;
+  background-color: rgba(15, 44, 63, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 0 auto;
 }
 
-/* Footer */
+/* FOOTER */
 .site-footer {
   background-color: #0F2C3F;
   text-align: center;
